@@ -6,6 +6,8 @@ import CreateEventPage from "./components/CreateEventPage/CreateEventPage.js";
 import JoinEventPage from "./components/JoinEventPage/JoinEventPage.js";
 import UserHome from "./components/UserHome/UserHome.js";
 import SpotifyInterface from './util/SpotifyInterface';
+import Queue from "./components/Queue/Queue.js";
+import Voting from "./components/Voting/Voting.js";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route path="/createEvent" element={<CreateEventPage />} />
         <Route path="/joinEvent" element={<JoinEventPage />} />
         <Route path="/userHome" element={<UserHome />} />
+        <Route path="/queue" element={<Queue />} />
+        <Route path="/vote" element={<Voting />} />
       </Routes>
     </Router>
   );

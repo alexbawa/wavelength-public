@@ -1,5 +1,6 @@
 import IconTextButton from "../../elements/IconTextButton/IconTextButton";
-import playIcon from "../../parts/play-button-round-icon.png";
+import playIcon from "../../parts/play.png";
+import musicIcon from "../../parts/music.png";
 const UserHome = () => {
 
     const handleSearch = (event) => {
@@ -14,7 +15,8 @@ const UserHome = () => {
                 <input className="search-songs" onChange={null/* TODO*/} placeholder="Suggest a song" />
             </form>
 
-            <IconTextButton icon={playIcon} text="Play" />
+            <IconTextButton icon={playIcon} text="See queue" link="/queue" />
+            <IconTextButton icon={musicIcon} text="Vote on songs" link="/vote" />
         </div>
     );
 }
