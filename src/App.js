@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import SpotifyInterface from './util/SpotifyInterface';
 import './App.css';
 
 function App() {
