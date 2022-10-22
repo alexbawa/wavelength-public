@@ -1,6 +1,7 @@
 let accessToken;
 const clientID = '595fd8a16aa643a0835c3159663e9350';
-const redirectURI = 'http://localhost:3000';
+const baseURL = 'http://localhost:3000'
+const redirectURI = baseURL + '/createEvent';
 
 const SpotifyInterface = {
     async getToken() {
