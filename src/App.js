@@ -5,6 +5,7 @@ import Homepage from "./components/Homepage/Homepage.js";
 import CreateEventPage from "./components/CreateEventPage/CreateEventPage.js";
 import JoinEventPage from "./components/JoinEventPage/JoinEventPage.js";
 import UserHome from "./components/UserHome/UserHome.js";
+import SpotifyInterface from './util/SpotifyInterface';
 
 function App() {
   return (
