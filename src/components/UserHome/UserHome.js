@@ -1,22 +1,25 @@
 import IconTextButton from "../../elements/IconTextButton/IconTextButton";
 import playIcon from "../../parts/play-button-round-icon.png";
-const UserHome = () => {
+import React from "react";
 
-    const handleSearch = (event) => {
+class UserHome extends React.Component {
+    handleSearch(event) {
         event.preventDefault();
-        console.log('searching...');
+        console.log("searching...");
     }
-
-    return (
-        <div className="container">
-            <h1>User Home</h1>
-            <form onSubmit={handleSearch}>
-                <input className="search-songs" onChange={null/* TODO*/} placeholder="Suggest a song" />
-            </form>
-
-            <IconTextButton icon={playIcon} text="Play" />
-        </div>
-    );
+    
+    render() {
+        return (
+            <div className="container">
+                <h1>User Home</h1>
+                <form onSubmit={this.handleSearch}>
+                    <input className="search-songs" onChange={null/* TODO*/} placeholder="Suggest a song" />
+                </form>
+    
+                <IconTextButton icon={playIcon} text="Play" />
+            </div>
+        );
+    }
 }
 
 export default UserHome;

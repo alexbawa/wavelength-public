@@ -7,17 +7,32 @@ import JoinEventPage from "./components/JoinEventPage/JoinEventPage.js";
 import UserHome from "./components/UserHome/UserHome.js";
 import SpotifyInterface from './util/SpotifyInterface';
 
-function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/createEvent" element={<CreateEventPage />} />
-        <Route path="/joinEvent" element={<JoinEventPage />} />
-        <Route path="/userHome" element={<UserHome />} />
-      </Routes>
-    </Router>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      token: null,
+    }
+
+    this.setToken = this.setToken.bind(this);
+  }
+
+  setToken(newToken) {
+    this.setState({token: newToken});
+  }
+
+  render() {
+    return (
+      <Router>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/createEvent" element={<CreateEventPage setToken={this.setToken}/>} />
+          <Route path="/joinEvent" element={<JoinEventPage setToken={this.setToken}/>} />
+          <Route path="/userHome" element={<UserHome />} />
+        </Routes>
+      </Router>
+    );
+  }
 }
 
 export default App;
