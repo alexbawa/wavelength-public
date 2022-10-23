@@ -23,7 +23,6 @@
         width: 100vw;
         margin: 0 auto;
         grid-template-columns: 30px auto;
-
         .search-icon {
             grid-column-start: 1;
             grid-column-end: 2;
@@ -54,21 +53,23 @@
 }
 
 .other-actions {
-    padding: 5px;
+    margin: 5px;
     position: absolute;
-
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: center;
     bottom: 0;
     width: 100%;
+    white-space: nowrap;
 
     .queue {
         grid-row-start: 1;
         grid-row-end: 2;
-        margin: auto;
     }
 
     .vote {
         grid-row-start: 2;
         grid-row-end: 3;
-        margin: auto;
     }
 }
