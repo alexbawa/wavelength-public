@@ -151,3 +151,15 @@ export async function getPhoneNumbers(token) {
 return suggested_songs;
 }
 
+export async function sendTexts(token, songName, artist) {
+  const ref = collection(firestore, "Events");
+  const docsSnap = await getDocs(ref);
+  var docRef = null;
+  var suggested_songs = [];
+  docsSnap.forEach(doc => {
+    if (doc.data().spotify_token == token){
+      fetch('https://us-central1-wavelength-366319.cloudfunctions.net/sendText/?doc='+doc.id+'&song='+songName+'&artist='+artist).then((res) => console.log(res))
+    }
+})
+}
+

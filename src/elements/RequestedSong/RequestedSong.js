@@ -7,6 +7,7 @@ import removeIcon from '../../parts/remove-icon.png';
 import Bell from '../../parts/Bell.png'
 //import TwilioInterface from "../../util/TwilioInterface";
 import { getPhoneNumbers } from "../../util/firebase";
+import { sendTexts } from "../../util/firebase";
 // props: albumart, name, artist
 class RequestedSong extends React.Component {
 
@@ -16,11 +17,8 @@ class RequestedSong extends React.Component {
     }
 
     async handleHotVote() {
-        let phoneNumbers = await getPhoneNumbers(this.props.token);
-        // TwilioInterface.sendHotVote(phoneNumbers, {
-        //     name: this.props.name,
-        //     artist: this.props.artist
-        // });
+
+        sendTexts(this.props.token,this.props.name, this.props.artist)
     }
     
     render() {        
