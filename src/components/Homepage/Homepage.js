@@ -1,7 +1,7 @@
 import React from "react";
-import { Redirect } from 'react-router-dom';
 import './Homepage.scss';
 import RightArrow from "./right-arrow.png"
+import Logo from "./filler-logo.png"
 const coreURL = "http://localhost:3000"
 
 class Homepage extends React.Component {
@@ -54,7 +54,7 @@ class Homepage extends React.Component {
     render() {
         return (
            <div className="homepage">
-                <img className="homepage-logo" src=""></img>
+                <img className="homepage-logo" src={Logo}></img>
                 <h4 className="homepage-subtitle">Join or create an event?</h4>
                 <p className="homepage-blurb">Make a selection and click the arrow.</p>
                 {this.renderSelection()}
