@@ -4,8 +4,7 @@ import RequestedSong from '../../elements/RequestedSong/RequestedSong.js';
 import testAlbumArt from '../../parts/testAlbum.jpg';
 import "./DJRequests.scss"
 import Bell from "../../parts/Bell.png"
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
+
 
 
 class DJRequests extends React.Component {

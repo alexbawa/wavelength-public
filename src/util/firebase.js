@@ -93,19 +93,6 @@ export async function suggestSong(id, track_name, artist, album_art_link, token)
   return "Success"
 }
 
-export async function getSuggestedSongs(){;
-  const docRef = doc(firestore,"Events", eventID)
-  var suggested_songs = [];
-
-
-  try {
-    getDoc(docRef).then((res) => suggested_songs = res.data().suggested_songs)
-  } catch (e) {
-    console.log(e);
-  }
-
-  return suggested_songs
-}
 
 export async function voteSong(song_id, vote) {
   const docRef = doc(firestore,"Events", eventID)
