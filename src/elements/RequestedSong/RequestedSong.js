@@ -5,10 +5,25 @@ import UpvoteIconFilled from '../../parts/upvotefilled.png';
 import addIcon from '../../parts/add-icon.png';
 import removeIcon from '../../parts/remove-icon.png';
 import Bell from '../../parts/Bell.png'
-
+//import TwilioInterface from "../../util/TwilioInterface";
+import { getPhoneNumbers } from "../../util/firebase";
 // props: albumart, name, artist
 class RequestedSong extends React.Component {
-    render() {
+
+    constructor(props) {
+        super(props);
+        this.handleHotVote = this.handleHotVote.bind(this);
+    }
+
+    async handleHotVote() {
+        let phoneNumbers = await getPhoneNumbers(this.props.token);
+        // TwilioInterface.sendHotVote(phoneNumbers, {
+        //     name: this.props.name,
+        //     artist: this.props.artist
+        // });
+    }
+    
+    render() {        
         return (
             <div className="song-with-voting" onClick={this.props.onClick}>
                 <img src={this.props.albumart} alt="Album cover" />
@@ -19,7 +34,7 @@ class RequestedSong extends React.Component {
                 <div className="voting">
                     <img className="add" onClick={() => {}} src={addIcon} alt="add"/>
                     <img className="remove" onClick={() => {}} src={removeIcon} alt="remove"/>
-                    <img className="bell" onClick={() => { }} src={Bell} alt="bell" />
+                    <img className="bell" onClick={this.handleHotVote} src={Bell} alt="bell" />
 
                 </div>
             </div>
