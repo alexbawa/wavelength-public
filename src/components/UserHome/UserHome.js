@@ -64,7 +64,6 @@ class UserHome extends React.Component {
             <div className="container wrapper">
                 <div className="search">
                     <h1 className="title">Search</h1>
-
                     <form >
                         <img className="search-icon" src={searchIcon} alt="search icon"/>
                         <input className="search-songs" onChange={this.updateSearch} placeholder="Suggest a song" autoComplete="off" />
