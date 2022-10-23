@@ -27,7 +27,7 @@ export async function joinEvent(join_code, phone_number) {
   const docsSnap = await getDocs(ref);
   var tokenRes = "";
   docsSnap.forEach(doc => {
-    if (doc.data().join_code === join_code){
+    if (doc.data().join_code == join_code){
       let phone_numbers = doc.data().phone_numbers
       phone_numbers.push(phone_number);
       try {
@@ -37,6 +37,8 @@ export async function joinEvent(join_code, phone_number) {
       }
       tokenRes = doc.data().spotify_token;
       eventID = doc.id
+    } else {
+      console.log(join_code + "!=" + doc.data().join_code);
     }
 })
   return tokenRes;
@@ -46,7 +48,7 @@ export async function joinEvent(join_code, phone_number) {
 
 export async function createEvent(playlist_id, spotify_token) {
   const ref = collection(firestore, "Events");
-  let join_code = (Math.floor(Math.random() * 10000) + 10000).toString().substring(1);
+  let join_code = (Math.floor(Math.random() * 100000) + 100000).toString().substring(1);
   let data = {
     join_code: join_code,
     playlist_id: playlist_id,
@@ -113,7 +115,3 @@ export async function voteSong(song_id, vote) {
     console.log(e);
   }
 }
-
-
-
-
