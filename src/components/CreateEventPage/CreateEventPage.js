@@ -45,7 +45,7 @@ class CreateEventPage extends React.Component {
 
     toDJDashboard() {
         console.log("Event set up! Let's go to the dashboard!")
-        window.location = coreURL + "/dashboard";
+        window.location = coreURL + "/dashboard/?token="+this.props.getToken();
     }
 
     renderCode() {
