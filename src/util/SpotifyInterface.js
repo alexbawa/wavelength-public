@@ -38,10 +38,8 @@ const SpotifyInterface = {
         }
     },
 
-    async createPlaylist(name) {
-        let token = await SpotifyInterface.getToken();
+    async createPlaylist(name, token) {
         let headers = {Authorization: `Bearer ${token}`};
-        
         let user_response = await fetch(`https://api.spotify.com/v1/me`,{headers});
         user_response = await user_response.json();
 
@@ -56,8 +54,7 @@ const SpotifyInterface = {
         return create_response.id;
     },
 
-    async addToPlaylist(playlistID, trackURI) {
-        let token = await SpotifyInterface.getToken();
+    async addToPlaylist(playlistID, trackURI, token) {
         let headers = {Authorization: `Bearer ${token}`};
 
         let user_response = await fetch(`https://api.spotify.com/v1/me`,{headers});
@@ -71,8 +68,7 @@ const SpotifyInterface = {
         })
     },
    
-    async search(terms) {
-        let token = await SpotifyInterface.getToken();
+    async search(terms, token) {
         let headers = {Authorization: `Bearer ${token}`};
         let response = await fetch(`https://api.spotify.com/v1/search?type=track&q=${terms}`, {headers})
         response = await response.json();
