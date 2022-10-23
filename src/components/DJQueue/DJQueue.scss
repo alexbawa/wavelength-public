@@ -8,21 +8,16 @@
     z-index: 1;
     height: $header-height;
     background-color: $background-color;
-
     .back {
         grid-column-start: 1;
         grid-column-end: 2;
     }
-
-    .section-title {
-        font-size: $title-font-size;
+    .title {
         text-align: left;
-        margin: 10px;
-        background: $background-gradient;
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
-        // margin-left: 30px;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        margin: auto 0;
+        font-size: $title-font-size;
     }
 }
 

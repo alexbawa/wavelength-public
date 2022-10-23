@@ -11,6 +11,7 @@ import Queue from "./components/Queue/Queue.js";
 import Voting from "./components/Voting/Voting.js";
 import DJDashboard from "./components/DJDashboard/DJDashboard";
 import DJRequest from "./components/DJDashboard/DJRequests";
+import DJQueue from "./components/DJQueue/DJQueue";
 
 class App extends React.Component {
   constructor(props) {
@@ -55,6 +56,7 @@ class App extends React.Component {
           <Route path="/userHome" element={<UserHome />} />
           <Route path="/queue" element={<Queue />} />
           <Route path="/vote" element={<Voting />} />
+          <Route path="/djqueue" element={<DJQueue />} />
         </Routes>
       </Router>
     );

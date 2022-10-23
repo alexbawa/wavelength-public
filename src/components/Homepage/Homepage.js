@@ -40,17 +40,17 @@ class Homepage extends React.Component {
         let createClasses = "selection right";
 
         if (this.state.selected == "join") {
-            joinClasses += " selected";
+            joinClasses += " selected ";
         } else {
-            createClasses += " selected";
+            createClasses += " selected ";
         }
         return (
             <div className="selection-container">
                 <div onClick={this.updateSelection} id="join" className={joinClasses}>
-                    <p className="button-text">Join</p>
+                    <p className="selection-text">Join</p>
                 </div>
                 <div onClick={this.updateSelection} id="create" className={createClasses}>
-                    <p className="button-text">Create</p>
+                    <p className="selection-text">Create</p>
                 </div>
             </div>
         );

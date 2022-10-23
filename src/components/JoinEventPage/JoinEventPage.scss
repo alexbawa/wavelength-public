@@ -5,14 +5,17 @@ input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
     appearance: none;
-    
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+
+    margin: 0;
+    /* <-- Apparently some margin are still there even though it's hidden */
 }
+
 .join-event-page {
     background-color: $background-color;
 }
 
-h1, h2 {
+h1,
+h2 {
     margin-left: 20px;
     color: white;
 }
@@ -24,7 +27,8 @@ text {
 
 
 input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
+    -moz-appearance: textfield;
+    /* Firefox */
     appearance: textfield;
 }
 
@@ -32,9 +36,11 @@ input[type=number] {
     background-color: transparent;
     border: none;
     object-fit: contain;
+
     img {
-        width: 20px;
+        height: 20px;
     }
+
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -44,6 +50,7 @@ input[type=number] {
     align-items: center;
     text-align: center;
 }
+
 .code-display-container {
     width: 100%;
     justify-content: space-evenly;
@@ -129,12 +136,28 @@ input[type=number] {
 }
 
 .go-button {
-    width: 332px;
-    height: 64px;   
-    text-align: center;  
-    align-self: center; 
-    font-size: 24px;
+    width: 250px;
+    height: 50px;
+    padding: 0px;
+    text-align: center;
+    align-self: center;
+    font-size: 20px;
     background: $background-gradient;
     //box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+}
+
+.button-text {
+    margin: auto 0;
+    color: $text-color;
+}
+
+.title {
+    text-align: left;
+    padding: 1px;
+    font-size: $title-font-size;
+    background: $background-gradient;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
 }

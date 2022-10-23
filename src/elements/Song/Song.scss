@@ -28,6 +28,7 @@
         text-overflow: ellipsis;
         display: block;
         width: calc(95%);
+        color: $text-color;
 
         .title {
             text-align: left;
@@ -35,6 +36,7 @@
             margin: auto 0;
             font-size: 24px;
             font-weight: 550;
+            color: $text-color;
         }
 
         .artist {

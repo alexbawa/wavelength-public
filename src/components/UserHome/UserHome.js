@@ -31,11 +31,12 @@ class UserHome extends React.Component {
         if(result == "Success") {
             // CALEB add pop up here
             alert(`Successfully added ${targetSongInfo[1]} to requested songs.`)
+            window.location.reload(false);
         }
     }
 
     async search() {
-        if(this.state.searchTerm) {
+        if(this.state.searchTerm  != "") {
             let results = await SpotifyInterface.search(this.state.searchTerm, this.state.spotifyToken);
             this.setState({
                 searchResults: results

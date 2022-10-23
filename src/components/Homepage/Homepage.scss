@@ -21,7 +21,7 @@
 
 .homepage-blurb {
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
     margin-top: 0;
     margin-bottom: 64px;
     margin-left: 35px;
@@ -53,12 +53,13 @@
     z-index: 1
 }
 
-.button-text {
-    padding: 0;
+.selection-text {
+    margin: 20px;
+    color: $text-color;
 }
 
 .fancy-text {
-    font-weight: 700;
+    font-weight: bold;
     background: $background-gradient;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;

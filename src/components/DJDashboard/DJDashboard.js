@@ -51,13 +51,13 @@ class DJDashboard extends React.Component {
             <div className="container wrapper">
                 <div className="search">
                     <h1 className="title">Dashboard</h1>
-                    <div>
+                    {/* <div>
                         {this.renderCurrentSong()}
-                    </div>
+                    </div> */}
                 </div>
                 <div className='other-actions'>
-        
-                    <IconTextButton className='vote' icon={musicIcon} text="See Requests" link="/requests" />
+                    <IconTextButton className='queue' icon={playIcon} text="See queue" link="/djqueue" />
+                    <IconTextButton className='requests' icon={musicIcon} text="See requests" link="/requests" />
                 </div>
             </div>
         );
