@@ -4,6 +4,9 @@ import ProgressDots from "../ProgressDots/ProgressDots";
 import './CreateEventPage.scss';
 import SpotifyLogo from "./spotify-logo.png";
 import RightArrow from "../Homepage/right-arrow.png";
+import Announce from "./announce.png";
+import Display from "./display.png";
+import Spread from "./spread.png";
 import {createEvent} from "../../util/firebase"
 
 
@@ -15,6 +18,8 @@ class CreateEventPage extends React.Component {
         }
         this.createPlaylist = this.createPlaylist.bind(this);
         this.getCode = this.getCode.bind(this);
+        this.renderCode = this.renderCode.bind(this);
+        this.toDJDashboard = this.toDJDashboard.bind(this);
     }
 
     async componentDidMount() {
@@ -37,12 +42,49 @@ class CreateEventPage extends React.Component {
         })
     }
 
+    toDJDashboard() {
+        console.log("Event set up! Let's go to the dashboard!")
+    }
+
+    renderCode() {
+        let digits = [];
+        if(this.state.code != null) {
+            let codeAsString = String(this.state.code);
+            for(let i = 0; i < 5; i++) {
+                digits.push(
+                    <p key={i} className="digit">{codeAsString[i]}</p>
+                )
+            }
+        }
+        return digits;
+    }
+
     render() {
         if(this.props.getToken() && this.props.getPlaylistID()) {
             return (
                 <div className="create-event-code-page">
-                    <h2 className="create-event-code-title">Event Code</h2>
-                    <p className="code-display">{this.state.code}</p>
+                    <h2 className="create-event-code-title">Code</h2>
+                    <div className ="code-display">
+                        {this.renderCode()}
+                    </div>
+                    <p className="code-subtitle">Distribute your code:</p>
+                    <div className="code-steps">
+                        <div className="code-step">
+                            <img className="code-step-icon" src={Announce}/>
+                            <p className="code-step-text">Announce it to the crowd</p>
+                        </div>
+
+                        <div className="code-step">
+                            <img className="code-step-icon" src={Display}/>
+                            <p className="code-step-text">Display it on a screen</p>
+                        </div>
+
+                        <div className="code-step">
+                            <img className="code-step-icon" src={Spread}/>
+                            <p className="code-step-text">Spread it by word of mouth</p>
+                        </div>
+                    </div>
+                    <img onClick={this.toDJDashboard} className="dashboard-arrow" src={RightArrow}></img>
                     <ProgressDots filled={3} total={3}/>
                 </div>
             );
