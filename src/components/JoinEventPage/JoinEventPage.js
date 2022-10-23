@@ -12,6 +12,7 @@ class JoinEventPage extends React.Component {
         this.state = {
             code: 0,
             phone: null,
+            step: 1,
         }
 
         this.setCode = this.setCode.bind(this);
@@ -33,10 +34,15 @@ class JoinEventPage extends React.Component {
         console.log(phone)
     }
 
+    
+
     render() {
-        return (
-            <div className="join-event-page">
-                <h1>Join Event Page</h1>
+
+        let step;
+        if (this.state.step == 1){
+            step =  <div>
+                <h1>Enter Event Code</h1>
+                <h2>You've got taste.</h2>
                 <div className="container">
                 <ReactCodeInput
                     id="pinCode"
@@ -45,15 +51,31 @@ class JoinEventPage extends React.Component {
                     onChange={this.setCode}
                     value={this.state.code}
                 />
+                </div>
+                </div>
+        } else {
+            step =  <div>
+                <h1>Enter Event Code</h1>
+                <h2>Show 'em off.</h2>
+                <div className="container">
                 <Input country="US" id="join-event-phone" className="phone-input" onChange={this.setPhone} />
-                {/* error={code ? (isValidPhoneNumber(code) ? null : 'Invalid phone number') : 'Phone number required'}
-                TODO: phone number validation */}
+                </div>
+                </div>
+        }
+        return (
+            <div className="join-event-page">
                 
+                {step}
+                <button onClick={() => {this.setState({
+                    step: this.state.step+1
+                })}}>
+                    Next
+                </button>
                 <button onClick={() => {joinEvent(this.state.code, this.state.phone).then((res) => console.log(res))}}>
                     <Link to="/userHome">Join Event</Link>
                 </button>
     
-                </div>
+            
             </div>
         );
     }
