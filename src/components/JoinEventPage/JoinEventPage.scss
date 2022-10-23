@@ -3,24 +3,110 @@ input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
     appearance: none;
+    
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
+.join-event-page {
+    background-color: #4D4D4D;
+}
+
+h1, h2 {
+    color: white;
+}
+
+text {
+    color: white;
+    font-size: 34px;
+}
+
 
 input[type=number] {
     -moz-appearance:textfield; /* Firefox */
     appearance: textfield;
 }
 
-.code-input {
+.bottom-icon-button {
+    background-color: transparent;
+    border: none;
+    object-fit: contain;
+}
+
+.container {
+    background-color: #4D4D4D;
+    align-items: center;
+    text-align: center;
+}
+.code-display-container {
     width: 100%;
-    height: 100%;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    margin-bottom: 60px;
+}
+
+.phone-display {
+    width: 90%;
+    height: 60px;
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    margin-bottom: 80px;
+    border-bottom: solid 1px white;
+}
+
+.code-cell {
+    margin-top: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    border: solid 1px white;
+}
+
+.cell {
+    width: 40px;
+}
+
+.bottom-bar-container {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+
+.filled-circle {
+    display: flex;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border: solid 1px white;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.open-circle {
+    display: flex;
+    width: 10px;
+    height: 10px;
+    border: solid 1px white;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.code-input {
     border: 0;
     font-size: 1.5em;
-    text-align: center;
     font-weight: 300;
-    color: #000;
-    background-color: transparent;
     outline: none;
+}
+
+.disabled {
+    opacity: 0%;
 }
 
 .phone-input {
@@ -32,4 +118,15 @@ input[type=number] {
     font-weight: 300;
     color: #000;
     outline: none;
+}
+
+.go-button {
+    width: 332px;
+    height: 64px;   
+    text-align: center;  
+    align-self: center; 
+    font-size: 24px;
+    background: conic-gradient(from 180deg at 50% 50%, #A5C9F4 0deg, rgba(255, 255, 255, 0.91) 253.13deg, #A5C9F4 360deg);
+    //box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 }
