@@ -1,0 +1,43 @@
+.song {
+    display: grid;
+    margin: 5px;
+    grid-template-columns: 60px;
+    grid-template-rows: 40px auto;
+    width: 100%;
+    border: 1px;
+
+    img {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        width: 50px;
+        height: 50px;
+        margin: auto 0;
+    }
+
+    .song-info {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+        width: calc(100%);
+
+        .title {
+            width: 100%;
+            margin: auto 0;
+            font-size: 25px;
+        }
+
+        .artist {
+            grid-row-start: 2;
+            grid-row-end: 3;
+            margin: auto 0;
+            font-size: 15px;
+        }
+    }
+}
