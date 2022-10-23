@@ -72,3 +72,12 @@
         margin: auto;
     }
 }
+
+.search-results {
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: scroll;
+}
