@@ -1,7 +1,6 @@
 @import '../../GlobalVars.scss';
 
 .create-event-code-page {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -13,8 +12,10 @@
 
 .create-event-code-title {
     font-size: $title-font-size;
-    margin-top: 60px;
     margin-bottom: 18px;
-    color: #4B8BD7;
+    background: $background-gradient;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
     margin-left: 30px;
 }

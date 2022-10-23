@@ -68,16 +68,19 @@ export async function createEvent(playlist_id, spotify_token) {
 }
 
 
-export async function suggestSong(id, track_name, artist, album_art_link){;
-  const docRef = doc(firestore,"Events", eventID)
+export async function suggestSong(id, track_name, artist, album_art_link, token){
+  const ref = collection(firestore, "Events");
+  const docsSnap = await getDocs(ref);
+  var docRef = null;
   var suggested_songs = [];
+  docsSnap.forEach(doc => {
+    if (doc.data().spotify_token == token){
+      suggested_songs = doc.data().suggested_songs;
+      docRef = doc.ref;
+      eventID = doc.id
+    }
+})
 
-
-  try {
-    getDoc(docRef).then((res) => suggested_songs = res.data().suggested_songs)
-  } catch (e) {
-    console.log(e);
-  }
 
   suggested_songs.push({id: id, track_name: track_name, artist: artist, album_art_link: album_art_link, net_vote: 1});
   
@@ -128,4 +131,19 @@ export async function voteSong(song_id, vote) {
   } catch (e) {
     console.log(e);
   }
+}
+
+export async function getSuggestedSongs(token){
+  const ref = collection(firestore, "Events");
+  const docsSnap = await getDocs(ref);
+  var docRef = null;
+  var suggested_songs = [];
+  docsSnap.forEach(doc => {
+    if (doc.data().spotify_token == token){
+      suggested_songs = doc.data().suggested_songs;
+      docRef = doc.ref;
+      eventID = doc.id
+    }
+})
+return suggested_songs;
 }

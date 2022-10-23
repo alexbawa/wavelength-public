@@ -1,7 +1,7 @@
 import React from "react";
 import './Homepage.scss';
 import RightArrow from "./right-arrow.png"
-import Logo from "./filler-logo.png"
+import Logo from "./logo.png"
 const coreURL = "http://localhost:3000"
 
 class Homepage extends React.Component {
@@ -46,18 +46,22 @@ class Homepage extends React.Component {
         }
         return (
             <div className="selection-container">
-                <div onClick={this.updateSelection} id="join" className={joinClasses}><p>Join</p></div>
-                <div onClick={this.updateSelection} id="create" className={createClasses}><p>Create</p></div>
+                <div onClick={this.updateSelection} id="join" className={joinClasses}>
+                    <p className="button-text">Join</p>
+                </div>
+                <div onClick={this.updateSelection} id="create" className={createClasses}>
+                    <p className="button-text">Create</p>
+                </div>
             </div>
         );
     }
-    
+
     render() {
         return (
             <div className="homepage">
                 <img className="homepage-logo" src={Logo}></img>
-                <h4 className="homepage-subtitle">Join or create an event?</h4>
-                <p className="homepage-blurb">Make a selection and click the arrow.</p>
+                <h4 className="homepage-subtitle">Welcome to <span className='fancy-text'>Wavelength</span>.</h4>
+                <p className="homepage-blurb">Make a selection to get in sync.</p>
                 {this.renderSelection()}
                 <img onClick={this.executeSelection} className="homepage-arrow" src={RightArrow}></img>
             </div>
