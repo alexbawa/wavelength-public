@@ -1,10 +1,12 @@
+@import '../../GlobalVars.scss';
+
 .song {
     display: grid;
     margin: 5px;
-    grid-template-columns: 60px;
+    grid-template-columns: 60px auto;
     grid-template-rows: 40px auto;
     width: 100%;
-    border: 1px;
+    color: $text-color;
 
     img {
         grid-column-start: 1;

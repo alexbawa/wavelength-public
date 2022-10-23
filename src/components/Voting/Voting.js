@@ -9,7 +9,7 @@ class Voting extends Component {
             <div className='container'>
                 <BackButton link='/userHome'/>
                 <h1>Voting</h1>
-                <SongWithVoting albumart={testAlbumArt} name='Flashing Lights Flashing Lights Flashing Lights' artist='Kanye West'/>
+                <SongWithVoting albumart={testAlbumArt} name='Flashing Lights Flashing Lights Flashing Lightsssssssssss' artist='Kanye West'/>
             </div>
         );
     }

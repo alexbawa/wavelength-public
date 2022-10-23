@@ -10,7 +10,7 @@ class Queue extends Component {
                 <BackButton link='/userHome'/>
                 <h1>Queued</h1>
                 {/* test song - delete later */}
-                <Song albumart={testAlbumArt} name='Flashing Lightsssssssssssssssssssssss' artist='Kanye West'/>
+                <Song albumart={testAlbumArt} name='Flashing Lights Flashing Lights Flashing Lightsssssssssss' artist='Kanye West'/>
             </div>
         );
     }
