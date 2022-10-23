@@ -1,0 +1,37 @@
+p.current-song-caption {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #000; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+} 
+ 
+p.current-song-caption span { 
+     background:#fff; 
+     padding:0 10px; 
+}
+
+.current-song {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.current-song-art {
+    height: 300px;
+    width: 300px;
+    border-radius: 30px;
+}
+
+.current-song-title {
+    margin-top: 35px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.current-song-artist {
+    margin-top: 10px;
+    font-size: 22px;
+    text-align: center;
+}

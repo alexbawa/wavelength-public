@@ -87,6 +87,23 @@ const SpotifyInterface = {
                 }
             })
         }
+    },
+
+    // Gets info for current playing song
+    async getCurrentSong(token) {
+        let headers = {Authorization: `Bearer ${token}`};
+        let player_response = await fetch(`https://api.spotify.com/v1/me/player`,{headers});
+        player_response = await player_response.json();
+
+        if(!player_response.is_active) {
+            return {};
+        } else {
+            return {
+                title: player_response.item.name,
+                artist: player_response.item.artist[0].name,
+                coverArt: player_response.album.images[0].url,
+            }
+        }
     }
 }
 
