@@ -15,12 +15,13 @@
     text-align: center;
     font-size: $subtitle-font-size;
     margin-top: 48px;
-    margin-bottom: 48px;
+    margin-bottom: 36px;
+    font-weight: 400;
 }
 
 .homepage-blurb {
     text-align: center;
-    font-size: $paragraph-font-size;
+    font-size: 20px;
     margin-top: 0;
     margin-bottom: 64px;
     margin-left: 35px;
@@ -43,7 +44,7 @@
     text-decoration: none;
     color: $background-color;
     background-color: $secondary-color;
-    font-size: 24px;
+    font-size: 20px;
     border-radius: 40px;
     vertical-align: middle;
     z-index: 1
@@ -61,4 +62,16 @@
     z-index: 2;
     background-color: $text-color;
     color: $background-color
+}
+
+.homepage-arrow {
+    margin-top: 10px;
+    height: 60px;
+    width: 60px;
+}
+
+.homepage-logo {
+    width: 300px;
+    height: 375px;
+    margin-top: 70px;
 }

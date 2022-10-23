@@ -1,6 +1,8 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 import './Homepage.scss';
+import RightArrow from "./right-arrow.png"
+import Logo from "./filler-logo.png"
+const coreURL = "http://localhost:3000"
 
 class Homepage extends React.Component {
     constructor(props) {
@@ -10,6 +12,18 @@ class Homepage extends React.Component {
         }
 
         this.updateSelection = this.updateSelection.bind(this);
+        this.executeSelection = this.executeSelection.bind(this);
+    }
+
+    executeSelection() {
+        switch(this.state.selected) {
+            case "join":
+                window.location = coreURL + "/joinEvent";
+                break;
+            case "create":
+                window.location = coreURL + "/createEvent";
+                break;
+        }
     }
 
     updateSelection(event) {
@@ -40,10 +54,11 @@ class Homepage extends React.Component {
     render() {
         return (
            <div className="homepage">
-                <img className="homepage-logo" src=""></img>
-                <h4 className="homepage-subtitle">Welcome to Waveform!</h4>
-                <p className="homepage-blurb">Join or create an event to get started with your dynamic music selection. Your perfect party playlist awaits.</p>
+                <img className="homepage-logo" src={Logo}></img>
+                <h4 className="homepage-subtitle">Join or create an event?</h4>
+                <p className="homepage-blurb">Make a selection and click the arrow.</p>
                 {this.renderSelection()}
+                <img onClick={this.executeSelection} className="homepage-arrow" src={RightArrow}></img>
            </div>
         );
     }
