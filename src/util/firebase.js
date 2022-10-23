@@ -118,3 +118,18 @@ export async function voteSong(song_id, vote) {
     console.log(e);
   }
 }
+
+export async function getSuggestedSongs(token){
+  const ref = collection(firestore, "Events");
+  const docsSnap = await getDocs(ref);
+  var docRef = null;
+  var suggested_songs = [];
+  docsSnap.forEach(doc => {
+    if (doc.data().spotify_token == token){
+      suggested_songs = doc.data().suggested_songs;
+      docRef = doc.ref;
+      eventID = doc.id
+    }
+})
+return suggested_songs;
+}

@@ -4,33 +4,50 @@ import UpvoteIcon from '../../parts/upvote.png';
 import UpvoteIconFilled from '../../parts/upvotefilled.png';
 import DownvoteIcon from '../../parts/downvote.png';
 import DownvoteIconFilled from '../../parts/downvotefilled.png';
+import { voteSong } from "../../util/firebase";
 
 // props: albumart, name, artist
 class SongWithVoting extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            vote: 0,
-            voted: 0, // -1 for downvote, 1 for upvote, 0 for no vote yet
+            vote: this.props.vote_state,
+            voted: false, // -1 for downvote, 1 for upvote, 0 for no vote yet
         }
     }
 
     upvote() {
-        this.setState(prevState => {
+        if(!this.state.voted) {
+            voteSong(this.props.song_uri, 1);
+            this.setState({
+                vote: this.state.vote+1,
+                voted: true
+            })
+        }
+    
+        /*this.setState(prevState => {
             return {
                 vote: prevState.voted == 1 ? prevState.vote-1 : prevState.vote + 1 - prevState.voted,
                 voted: prevState.voted == 1 ? 0 : 1
             };
-        });
+        });*/
     }
 
     downvote() {
-        this.setState(prevState => {
+        if(!this.state.voted) {
+            voteSong(this.props.song_uri, -1);
+            this.setState({
+                vote: this.state.vote-1,
+                voted: true
+            })
+        }
+        
+        /*this.setState(prevState => {
             return {
                 vote: prevState.voted == -1 ? prevState.vote+1 : prevState.vote - 1 - prevState.voted,
                 voted: prevState.voted == -1 ? 0 : -1
             };
-        });
+        });*/
     }
     render() {
         return (
