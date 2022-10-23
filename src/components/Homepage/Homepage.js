@@ -41,9 +41,10 @@ class Homepage extends React.Component {
         return (
            <div className="homepage">
                 <img className="homepage-logo" src=""></img>
-                <h4 className="homepage-subtitle">Welcome to Waveform!</h4>
-                <p className="homepage-blurb">Join or create an event to get started with your dynamic music selection. Your perfect party playlist awaits.</p>
+                <h4 className="homepage-subtitle">Join or create an event?</h4>
+                <p className="homepage-blurb">Make a selection and click the arrow.</p>
                 {this.renderSelection()}
+                <img className="homepage-arrow" src=""></img>
            </div>
         );
     }
