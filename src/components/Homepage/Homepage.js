@@ -1,6 +1,8 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import './Homepage.scss';
+import RightArrow from "./right-arrow.png"
+const coreURL = "http://localhost:3000"
 
 class Homepage extends React.Component {
     constructor(props) {
@@ -10,6 +12,18 @@ class Homepage extends React.Component {
         }
 
         this.updateSelection = this.updateSelection.bind(this);
+        this.executeSelection = this.executeSelection.bind(this);
+    }
+
+    executeSelection() {
+        switch(this.state.selected) {
+            case "join":
+                window.location = coreURL + "/joinEvent";
+                break;
+            case "create":
+                window.location = coreURL + "/createEvent";
+                break;
+        }
     }
 
     updateSelection(event) {
@@ -44,7 +58,7 @@ class Homepage extends React.Component {
                 <h4 className="homepage-subtitle">Join or create an event?</h4>
                 <p className="homepage-blurb">Make a selection and click the arrow.</p>
                 {this.renderSelection()}
-                <img className="homepage-arrow" src=""></img>
+                <img onClick={this.executeSelection} className="homepage-arrow" src={RightArrow}></img>
            </div>
         );
     }
