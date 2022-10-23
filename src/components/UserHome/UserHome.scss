@@ -1,3 +1,59 @@
-form {
-    width: 80%;
+@import '../../GlobalVars.scss';
+
+.wrapper {
+    display: block;
+}
+
+.search {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 5px;
+    width: 100%;
+    height: 200px;
+    justify-content: center;
+
+    form {
+        display: grid;
+        width: 100vw;
+        margin: 0 auto;
+        grid-template-columns: 25px auto;
+        .search-icon {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            width: 20px;
+            margin: auto 0;
+            
+        }
+        .search-songs {
+            width: 90%;
+            padding: 3px;
+            border-radius: 6px;
+            border-color: $secondary-color;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            background-color: transparent;
+            font-size: 20px;
+        }
+    }
+
+    .title {
+        padding-bottom: 35px;
+    }
+}
+
+.other-actions {
+    padding: 5px;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+    .queue {
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .vote {
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
 }
