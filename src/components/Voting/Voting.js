@@ -30,11 +30,12 @@ class Voting extends Component {
     }
 
     render() {
+        let linkString = "/userHome/?token=" + this.state.spotifyToken;
         console.log(this.state.suggested_songs)
         return (
             <div className='container'>
                 <div className='header'>
-                    <BackButton className="back" link='/userHome' />
+                    <BackButton className="back" link={linkString}/>
                     <h1 className="title">Voting</h1>
                 </div>
                 <div className='songs'>
