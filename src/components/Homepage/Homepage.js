@@ -47,10 +47,10 @@ class Homepage extends React.Component {
         return (
             <div className="selection-container">
                 <div onClick={this.updateSelection} id="join" className={joinClasses}>
-                    Join
+                    <p className="button-text">Join</p>
                 </div>
                 <div onClick={this.updateSelection} id="create" className={createClasses}>
-                    Create
+                    <p className="button-text">Create</p>
                 </div>
             </div>
         );
@@ -60,8 +60,8 @@ class Homepage extends React.Component {
         return (
             <div className="homepage">
                 <img className="homepage-logo" src={Logo}></img>
-                <h4 className="homepage-subtitle">Join or create an event?</h4>
-                <p className="homepage-blurb">Make a selection and click the arrow.</p>
+                <h4 className="homepage-subtitle">Welcome to <span className='fancy-text'>Wavelength</span>.</h4>
+                <p className="homepage-blurb">Make a selection to get in sync.</p>
                 {this.renderSelection()}
                 <img onClick={this.executeSelection} className="homepage-arrow" src={RightArrow}></img>
             </div>

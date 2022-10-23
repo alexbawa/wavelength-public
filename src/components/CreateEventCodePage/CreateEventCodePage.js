@@ -11,7 +11,7 @@ class CreateEventCodePage extends React.Component {
     render() {
         console.log(this.props.getPlaylistID());
         return (
-            <div className="create-event-code-page">
+            <div className="container create-event-code-page">
                 <h2 className="create-event-code-title">Event Code</h2>
                 <ProgressDots filled={3} total={3}/>
             </div>

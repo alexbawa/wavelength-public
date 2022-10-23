@@ -15,7 +15,10 @@
     font-size: $title-font-size;
     margin-top: 60px;
     margin-bottom: 18px;
-    color: #4B8BD7;
+    background: $background-gradient;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
     margin-left: 30px;
 }
 
@@ -38,14 +41,29 @@
 }
 
 .create-event-code-page {
-    height: 100vh;
     display: flex;
+    width: 100%;
     flex-direction: column;
+    flex-shrink: 0;
     justify-content: flex-start;
     align-items: flex-start;
     background-color: $background-color;
     color: $text-color;
     font-family: $font;
+    .arrow-dots-container:last-of-type{
+        margin-top: auto;
+    }
+}
+
+.create-event-code-title {
+    font-size: $title-font-size;
+    text-align: left;
+    margin-bottom: 18px;
+    background: $background-gradient;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-left: 30px;
 }
 
 .create-event-playlist-arrow {

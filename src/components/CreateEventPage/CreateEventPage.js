@@ -7,7 +7,7 @@ import RightArrow from "../Homepage/right-arrow.png";
 import Announce from "./announce.png";
 import Display from "./display.png";
 import Spread from "./spread.png";
-import {createEvent} from "../../util/firebase"
+import { createEvent } from "../../util/firebase"
 
 
 class CreateEventPage extends React.Component {
@@ -48,9 +48,9 @@ class CreateEventPage extends React.Component {
 
     renderCode() {
         let digits = [];
-        if(this.state.code != null) {
+        if (this.state.code != null) {
             let codeAsString = String(this.state.code);
-            for(let i = 0; i < 5; i++) {
+            for (let i = 0; i < 5; i++) {
                 digits.push(
                     <p key={i} className="digit">{codeAsString[i]}</p>
                 )
@@ -60,32 +60,32 @@ class CreateEventPage extends React.Component {
     }
 
     render() {
-        if(this.props.getToken() && this.props.getPlaylistID()) {
+        if (this.props.getToken() && this.props.getPlaylistID()) {
             return (
                 <div className="create-event-code-page">
                     <h2 className="create-event-code-title">Code</h2>
-                    <div className ="code-display">
+                    <div className="code-display">
                         {this.renderCode()}
                     </div>
                     <p className="code-subtitle">Distribute your code:</p>
                     <div className="code-steps">
                         <div className="code-step">
-                            <img className="code-step-icon" src={Announce}/>
+                            <img className="code-step-icon" src={Announce} />
                             <p className="code-step-text">Announce it to the crowd</p>
                         </div>
 
                         <div className="code-step">
-                            <img className="code-step-icon" src={Display}/>
+                            <img className="code-step-icon" src={Display} />
                             <p className="code-step-text">Display it on a screen</p>
                         </div>
 
                         <div className="code-step">
-                            <img className="code-step-icon" src={Spread}/>
+                            <img className="code-step-icon" src={Spread} />
                             <p className="code-step-text">Spread it by word of mouth</p>
                         </div>
                     </div>
                     <img onClick={this.toDJDashboard} className="dashboard-arrow" src={RightArrow}></img>
-                    <ProgressDots filled={3} total={3}/>
+                    <ProgressDots className="dots" filled={3} total={3} />
                 </div>
             );
         } else if (this.props.getToken()) {
@@ -95,7 +95,7 @@ class CreateEventPage extends React.Component {
                     <div className="centered-box">
                         <input id="playlist-name" className="create-event-playlist-input" placeholder='Enter playlist name'></input>
                         <img onClick={this.createPlaylist} className="create-event-playlist-arrow" src={RightArrow}></img>
-                        <ProgressDots filled={2} total={3}/>
+                        <ProgressDots className="dots" filled={2} total={3} />
                     </div>
                 </div>
             );
@@ -105,7 +105,7 @@ class CreateEventPage extends React.Component {
                     <h2 className="create-event-title">Login to Spotify</h2>
                     <p className="create-event-subtitle">Time to authenticate - you will be redirected shortly.</p>
                     <img className="create-event-spotify-logo" src={SpotifyLogo}></img>
-                    <ProgressDots filled={1} total={3}/>
+                    <ProgressDots className="dots" filled={1} total={3} />
                 </div>
             );
         }
