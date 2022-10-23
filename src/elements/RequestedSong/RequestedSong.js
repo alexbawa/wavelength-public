@@ -1,12 +1,13 @@
 import React from "react";
-import './SongWithVoting.scss';
+import './RequestedSong.scss';
 import UpvoteIcon from '../../parts/upvote.png';
 import UpvoteIconFilled from '../../parts/upvotefilled.png';
-import DownvoteIcon from '../../parts/downvote.png';
-import DownvoteIconFilled from '../../parts/downvotefilled.png';
+import addIcon from '../../parts/add-icon.png';
+import removeIcon from '../../parts/remove-icon.png';
+import Bell from '../../parts/Bell.png'
 
 // props: albumart, name, artist
-class SongWithVoting extends React.Component {
+class RequestedSong extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -42,13 +43,14 @@ class SongWithVoting extends React.Component {
                     <p className="artist">{this.props.artist}</p>
                 </div>
                 <div className="voting">
-                    <img className="upvote" onClick={this.upvote.bind(this)} src={this.state.vote == 1 ? UpvoteIconFilled : UpvoteIcon} alt="upvote" />
                     <p className="vote-count">{this.state.vote}</p>
-                    <img className="downvote" onClick={this.downvote.bind(this)} src={this.state.vote == -1 ? DownvoteIconFilled : DownvoteIcon} alt="downvote" />
+                    <img onClick={() => {}} src={addIcon}/>
+                    <img className="remove" onClick={() => {}} src={Bell} alt="" />
+                  
                 </div>
             </div>
         );
     }
 }
 
-export default SongWithVoting;
+export default RequestedSong;

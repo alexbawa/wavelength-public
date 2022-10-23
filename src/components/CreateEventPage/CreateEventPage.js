@@ -8,6 +8,7 @@ import Announce from "./announce.png";
 import Display from "./display.png";
 import Spread from "./spread.png";
 import {createEvent} from "../../util/firebase"
+const coreURL = "http://localhost:3000";
 
 
 class CreateEventPage extends React.Component {
@@ -44,6 +45,7 @@ class CreateEventPage extends React.Component {
 
     toDJDashboard() {
         console.log("Event set up! Let's go to the dashboard!")
+        window.location = coreURL + "/dashboard";
     }
 
     renderCode() {

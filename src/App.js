@@ -9,6 +9,8 @@ import JoinEventPage from "./components/JoinEventPage/JoinEventPage.js";
 import UserHome from "./components/UserHome/UserHome.js";
 import Queue from "./components/Queue/Queue.js";
 import Voting from "./components/Voting/Voting.js";
+import DJDashboard from "./components/DJDashboard/DJDashboard";
+import DJRequest from "./components/DJDashboard/DJRequests";
 
 class App extends React.Component {
   constructor(props) {
@@ -46,6 +48,8 @@ class App extends React.Component {
       <Router>
         <Routes>
           <Route path="/" element={<Homepage />} />
+          <Route path="/dashboard" element={<DJDashboard/>} />
+          <Route path="/requests" element={<DJRequest/>} />
           <Route path="/createEvent" element={<CreateEventPage getPlaylistID={this.getPlaylistID} setPlaylistID={this.setPlaylistID} getToken={this.getToken} setToken={this.setToken}/>}/>
           <Route path="/joinEvent" element={<JoinEventPage setToken={this.setToken}/>} />
           <Route path="/userHome" element={<UserHome />} />

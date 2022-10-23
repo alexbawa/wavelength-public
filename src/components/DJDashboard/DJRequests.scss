@@ -1,0 +1,48 @@
+@import '../../GlobalVars.scss';
+
+.header {
+    position: fixed;
+    display: grid;
+    grid-template-columns: 20px auto;
+    width: 100%;
+    z-index: 1;
+    height: $header-height;
+    background-color: $background-color;
+    .back {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    .title {
+        text-align: left;
+        grid-column-start: 3;
+        grid-column-end: 6;
+        margin: auto 0;
+        font-size: $title-font-size;
+    }
+
+    .message {
+        text-align: left;
+        grid-column-start: 7;
+        grid-column-end: 8;
+        margin: auto 0;
+        font-size: $title-font-size;
+        border-bottom-left-radius: 50%;
+        border-top-left-radius: 50%;
+        height: 30px;
+        text-align: center;
+        font-size: 12px;
+        background: radial-gradient(50% 50% at 50% 50%, #7096C4 0%, #E2ECF8 100%);
+    }
+
+}
+
+img{
+    width: 20px;
+    object-fit: contain;
+}
+.songs {
+    position: absolute;
+    width: 100%;
+    top: $header-height;
+    background-color: $background-color;
+}
