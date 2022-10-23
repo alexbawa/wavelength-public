@@ -59,6 +59,7 @@ class UserHome extends React.Component {
     }
 
     render() {
+        let linkString = "/vote/?token=" + this.state.spotifyToken;
         return (
             <div className="container wrapper">
                 <div className="search">
@@ -73,7 +74,7 @@ class UserHome extends React.Component {
                 </div>
                 <div className='other-actions'>
                     <IconTextButton className='queue' icon={playIcon} text="See queue" link="/queue" />
-                    <IconTextButton className='vote' icon={musicIcon} text="Vote on songs" link="/vote" />
+                    <IconTextButton className='vote' icon={musicIcon} text="Vote on songs" link={linkString} />
                 </div>
             </div>
         );
