@@ -3,7 +3,9 @@
 .icon-text-button:hover {
     color: $text-color;
     border: 1.5px solid $text-color;
+    background: $background-gradient;
 }
+
 .icon-text-button {
     width: 80%;
     height: 35px;
@@ -17,6 +19,8 @@
     border-radius: 6px;
     border: 1.5px solid $secondary-color;
     box-sizing: border-box;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
 
     img {
         grid-column-start: 1;

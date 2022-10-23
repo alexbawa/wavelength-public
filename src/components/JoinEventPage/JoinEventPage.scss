@@ -1,3 +1,5 @@
+@import '../../GlobalVars.scss';
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
@@ -7,7 +9,7 @@ input::-webkit-inner-spin-button {
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 .join-event-page {
-    background-color: #4D4D4D;
+    background-color: $background-color;
 }
 
 h1, h2 {
@@ -32,7 +34,7 @@ input[type=number] {
 }
 
 .container {
-    background-color: #4D4D4D;
+    background-color: $background-color;
     align-items: center;
     text-align: center;
 }
@@ -126,7 +128,7 @@ input[type=number] {
     text-align: center;  
     align-self: center; 
     font-size: 24px;
-    background: conic-gradient(from 180deg at 50% 50%, #A5C9F4 0deg, rgba(255, 255, 255, 0.91) 253.13deg, #A5C9F4 360deg);
+    background: $background-gradient;
     //box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 }

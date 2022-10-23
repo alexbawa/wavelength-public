@@ -55,18 +55,14 @@
         max-height: 50px;
 
         img {
+            height: auto;
             width: 20px;
-            height: 25px;
-            filter: invert(100%);
         }
 
         .upvote {
             grid-column-start: 1;
             grid-column-end: 2;
-            margin-top: 14px;
-            :focus {
-                background-color: green;
-            }
+            margin-top: 20px;
         }
 
         .vote-count {
@@ -81,7 +77,7 @@
         .downvote {
             grid-column-start: 3;
             grid-column-end: 4;
-            margin-top: 14px;
+            margin-top: 20px;
 
         }
     }

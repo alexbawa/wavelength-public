@@ -1,7 +1,9 @@
 import React from "react";
 import './SongWithVoting.scss';
 import UpvoteIcon from '../../parts/upvote.png';
+import UpvoteIconFilled from '../../parts/upvotefilled.png';
 import DownvoteIcon from '../../parts/downvote.png';
+import DownvoteIconFilled from '../../parts/downvotefilled.png';
 
 // props: albumart, name, artist
 class SongWithVoting extends React.Component {
@@ -39,9 +41,9 @@ class SongWithVoting extends React.Component {
                     <p className="artist">{this.props.artist}</p>
                 </div>
                 <div className="voting">
-                    <img className="upvote" onClick={this.upvote.bind(this)} src={UpvoteIcon} alt="upvote" />
+                    <img className="upvote" onClick={this.upvote.bind(this)} src={this.state.vote == 1 ? UpvoteIconFilled : UpvoteIcon} alt="upvote" />
                     <p className="vote-count">{this.state.vote}</p>
-                    <img className="downvote" onClick={this.downvote.bind(this)} src={DownvoteIcon} alt="downvote" />
+                    <img className="downvote" onClick={this.downvote.bind(this)} src={this.state.vote == -1 ? DownvoteIconFilled : DownvoteIcon} alt="downvote" />
                 </div>
             </div>
         );

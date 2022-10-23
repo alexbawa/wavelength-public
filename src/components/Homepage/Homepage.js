@@ -16,7 +16,7 @@ class Homepage extends React.Component {
     }
 
     executeSelection() {
-        switch(this.state.selected) {
+        switch (this.state.selected) {
             case "join":
                 window.location = coreURL + "/joinEvent";
                 break;
@@ -28,7 +28,7 @@ class Homepage extends React.Component {
 
     updateSelection(event) {
         event.preventDefault();
-        if(event.target.id != this.state.selected) {
+        if (event.target.id != this.state.selected) {
             this.setState({
                 selected: event.target.id
             });
@@ -39,7 +39,7 @@ class Homepage extends React.Component {
         let joinClasses = "selection left";
         let createClasses = "selection right";
 
-        if(this.state.selected == "join") {
+        if (this.state.selected == "join") {
             joinClasses += " selected";
         } else {
             createClasses += " selected";
@@ -51,15 +51,16 @@ class Homepage extends React.Component {
             </div>
         );
     }
+    
     render() {
         return (
-           <div className="homepage">
+            <div className="homepage">
                 <img className="homepage-logo" src={Logo}></img>
                 <h4 className="homepage-subtitle">Join or create an event?</h4>
                 <p className="homepage-blurb">Make a selection and click the arrow.</p>
                 {this.renderSelection()}
                 <img onClick={this.executeSelection} className="homepage-arrow" src={RightArrow}></img>
-           </div>
+            </div>
         );
     }
 }

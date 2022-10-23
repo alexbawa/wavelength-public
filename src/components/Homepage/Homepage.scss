@@ -60,8 +60,8 @@
 
 .selected {
     z-index: 2;
-    background-color: $text-color;
-    color: $background-color
+    background: $background-gradient;
+    color: $background-color;
 }
 
 .homepage-arrow {

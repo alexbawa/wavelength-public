@@ -12,6 +12,7 @@
     justify-content: center;
 
     .title {
+        text-align: left;
         margin: 0;
         padding: 5px;
         font-size: $title-font-size;
@@ -55,9 +56,9 @@
 .other-actions {
     padding: 5px;
     position: absolute;
+
     bottom: 0;
     width: 100%;
-
 
     .queue {
         grid-row-start: 1;
