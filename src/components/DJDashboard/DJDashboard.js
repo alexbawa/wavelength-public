@@ -17,7 +17,6 @@ class DJDashboard extends React.Component {
             <div className="create-event-playlist-page">
                 <button>Queue</button>
                 <button><Link to="/requests">Request</Link></button>
-                
             </div>
         );
     }

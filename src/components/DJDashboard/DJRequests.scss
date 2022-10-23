@@ -3,43 +3,30 @@
 .header {
     position: fixed;
     display: grid;
-    grid-template-columns: 20px auto;
+    grid-template-columns: 40px auto;
     width: 100%;
     z-index: 1;
     height: $header-height;
     background-color: $background-color;
+
     .back {
         grid-column-start: 1;
         grid-column-end: 2;
     }
+
     .title {
         text-align: left;
-        grid-column-start: 3;
-        grid-column-end: 6;
+        grid-column-start: 2;
+        grid-column-end: 3;
         margin: auto 0;
         font-size: $title-font-size;
+        background: $background-gradient;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
     }
-
-    .message {
-        text-align: left;
-        grid-column-start: 7;
-        grid-column-end: 8;
-        margin: auto 0;
-        font-size: $title-font-size;
-        border-bottom-left-radius: 50%;
-        border-top-left-radius: 50%;
-        height: 30px;
-        text-align: center;
-        font-size: 12px;
-        background: radial-gradient(50% 50% at 50% 50%, #7096C4 0%, #E2ECF8 100%);
-    }
-
 }
 
-img{
-    width: 20px;
-    object-fit: contain;
-}
 .songs {
     position: absolute;
     width: 100%;

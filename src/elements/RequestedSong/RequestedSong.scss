@@ -3,7 +3,7 @@
 .song-with-voting {
     display: grid;
     margin: 5px;
-    grid-template-columns: 60px auto 90px;
+    grid-template-columns: 60px auto 85px;
     grid-template-rows: 40px auto;
     width: 100%;
     color: $text-color;
@@ -46,11 +46,11 @@
 
     .voting {
         grid-column-start: 3;
-        grid-column-end: 5;
+        grid-column-end: 4;
         grid-row-start: 1;
-        grid-row-end: 6;
+        grid-row-end: 3;
         display: grid;
-        grid-template-columns: 15px 10px 10px 10px;
+        grid-template-columns: 25px 25px 25px;
         right: 10px;
         max-height: 50px;
 
@@ -60,34 +60,24 @@
         }
 
         .add {
-            grid-column-start: 2;
-            grid-column-end: 3;
-            margin-top: 20px;
-        }
-
-        .vote-count {
             grid-column-start: 1;
             grid-column-end: 2;
-            text-align: center;
-            font-size: 15px;
             margin-top: 15px;
-            margin-right: 6px;
-        }
-
-        .bell {
-            grid-column-start: 4;
-            grid-column-end: 5;
-            text-align: center;
-            font-size: 15px;
-            margin-top: 15px;
-            margin-right: 6px;
         }
 
         .remove {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .bell {
             grid-column-start: 3;
             grid-column-end: 4;
-            margin-top: 20px;
-
+            text-align: center;
+            margin-top: 15px;
+            filter: invert(1);
         }
     }
 }

@@ -19,11 +19,9 @@ class DJRequests extends React.Component {
                 <div className='header'>
                     <BackButton className="back" link='/dashboard' />
                     <h1 className="title">Requests</h1>
-                    <button className="message"><img src={Bell}/></button>
-                    
                 </div>
                 <div className='songs'>
-                    
+
                     <RequestedSong onClick={() => console.log("JIKLJF")} albumart={testAlbumArt} name='Flashing Lights Flashing Lights Flashing Lightsssssssssss' artist='Kanye West' />
                     <RequestedSong albumart={testAlbumArt} name='Flashing Lights Flashing Lights Flashing Lightsssssssssss' artist='Kanye West' />
                     <RequestedSong albumart={testAlbumArt} name='Flashing Lights Flashing Lights Flashing Lightsssssssssss' artist='Kanye West' />

@@ -16,6 +16,10 @@
         margin: 0;
         padding: 5px;
         font-size: $title-font-size;
+        background: $background-gradient;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
     }
 
     form {
@@ -23,6 +27,7 @@
         width: 100vw;
         margin: 0 auto;
         grid-template-columns: 30px auto;
+
         .search-icon {
             grid-column-start: 1;
             grid-column-end: 2;
