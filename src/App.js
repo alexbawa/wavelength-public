@@ -6,6 +6,8 @@ import CreateEventPage from "./components/CreateEventPage/CreateEventPage.js";
 import JoinEventPage from "./components/JoinEventPage/JoinEventPage.js";
 import UserHome from "./components/UserHome/UserHome.js";
 import SpotifyInterface from './util/SpotifyInterface';
+import Queue from "./components/Queue/Queue.js";
+import Voting from "./components/Voting/Voting.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -29,6 +31,8 @@ class App extends React.Component {
           <Route path="/createEvent" element={<CreateEventPage setToken={this.setToken}/>} />
           <Route path="/joinEvent" element={<JoinEventPage setToken={this.setToken}/>} />
           <Route path="/userHome" element={<UserHome />} />
+          <Route path="/queue" element={<Queue />} />
+          <Route path="/vote" element={<Voting />} />
         </Routes>
       </Router>
     );
