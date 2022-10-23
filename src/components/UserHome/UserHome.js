@@ -27,7 +27,10 @@ class UserHome extends React.Component {
 
     async addRequest(infoString) {
         let targetSongInfo = infoString.split("|")
-        let result = suggestSong(targetSongInfo[0],targetSongInfo[1],targetSongInfo[2],targetSongInfo[3]).then((res) => console.log(res)).catch((e) => console.log(e));
+        let result = await suggestSong(targetSongInfo[0],targetSongInfo[1],targetSongInfo[2],targetSongInfo[3], this.state.spotifyToken);
+        if(result == "Success") {
+            alert(`Successfully added ${targetSongInfo[1]} to requested songs.`)
+        }
     }
 
     async search() {
