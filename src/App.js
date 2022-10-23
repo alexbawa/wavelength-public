@@ -15,7 +15,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       token: null,
-      playlistID: null
+      playlistID: null,
     }
 
     this.setToken = this.setToken.bind(this);
