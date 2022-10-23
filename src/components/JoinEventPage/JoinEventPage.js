@@ -8,19 +8,24 @@ import React from 'react';
 import './JoinEventPage.scss';
 import backIcon from '../../parts/left-vector.png';
 import nextIcon from '../../parts/right-vector.png';
+const coreURL = "http://localhost:3000"
+
 
 class JoinEventPage extends React.Component {
+
+    
     constructor(props) {
         super(props);
         this.state = {
             code: "",
             phone: "",
             step: 1,
+            
         }
-
         this.setNumberPad = this.setNumberPad.bind(this);
         this.topContent = this.topContent.bind(this);
         this.bottomContent = this.bottomContent.bind(this);
+
     }
 
 
@@ -50,7 +55,7 @@ class JoinEventPage extends React.Component {
                     phone: phoneNum + character,
 
                 });
-            } else {
+            } if (phoneNum.length == 9) {
                 this.setState({
                     step: 3
                 });
@@ -134,8 +139,16 @@ class JoinEventPage extends React.Component {
             return (
             <div className='bottom-bar-container'>
                 <div/>
-                <button className='go-button' onClick={() => {joinEvent(this.state.code, this.state.phone).then((res) => console.log(res))}}>
-                <Link to="/userHome">Let's Go.</Link></button>
+                <button className='go-button' onClick={() => {joinEvent(this.state.code, this.state.phone).then((res) => 
+                    {
+                        console.log(res);
+                        window.location = coreURL + "/userHome/?token="+res;
+                    
+                    }
+                    
+                    )}}>
+                
+                </button>
                 <div/>
             </div>
             );

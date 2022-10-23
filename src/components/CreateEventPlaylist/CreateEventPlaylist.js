@@ -23,7 +23,8 @@ class CreateEventPlaylist extends React.Component {
         let playlistID = await SpotifyInterface.createPlaylist(playlistName, this.props.getToken());
         this.props.setPlaylistID(playlistID)
         console.log(playlistID);
-        return <Navigate to="http://localhost:3000/createEventCode"/>
+        this.props.navigation.navigate('/createEventCode', {})
+        
     }
 
     render() {
