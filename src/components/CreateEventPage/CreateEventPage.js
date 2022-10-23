@@ -14,7 +14,7 @@ class CreateEventPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            code: null
+            code: null,
         }
         this.createPlaylist = this.createPlaylist.bind(this);
         this.getCode = this.getCode.bind(this);
@@ -31,8 +31,8 @@ class CreateEventPage extends React.Component {
         e.preventDefault();
         let playlistName = document.getElementById("playlist-name").value;
         let playlistID = await SpotifyInterface.createPlaylist(playlistName, this.props.getToken());
-        this.props.setPlaylistID(playlistID)
-        this.getCode()
+        this.props.setPlaylistID(playlistID);
+        setTimeout(this.getCode, 5000);
     }
 
     async getCode() {
