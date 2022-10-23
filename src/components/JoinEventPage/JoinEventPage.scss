@@ -6,11 +6,10 @@ input::-webkit-inner-spin-button {
     
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
-.join-event-page {
-    background-color: #4D4D4D;
-}
+
 
 h1, h2 {
+    margin-left: 20px;
     color: white;
 }
 
@@ -29,10 +28,14 @@ input[type=number] {
     background-color: transparent;
     border: none;
     object-fit: contain;
+    img {
+        width: 20px;
+    }
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .container {
-    background-color: #4D4D4D;
     align-items: center;
     text-align: center;
 }

@@ -5,16 +5,31 @@ import searchIcon from "../../parts/search.png";
 import React from "react";
 import './UserHome.scss';
 
+
 class UserHome extends React.Component {
+    constructor(props) {
+        super(props);
+        const params = new URLSearchParams(window.location.search);
+        this.state = {
+            spotifyToken: params.get("token")
+            
+        }
+
+        
+
+    }
+
     handleSearch(event) {
         event.preventDefault();
         console.log("searching...");
     }
 
     render() {
+
         return (
             <div className="container wrapper">
                 <div className="search">
+                    <h1>{this.state.spotifyToken}</h1>
                     <h1 className="title">Search</h1>
                     <form onSubmit={this.handleSearch}>
                         <img className="search-icon" src={searchIcon} alt="search icon"/>
