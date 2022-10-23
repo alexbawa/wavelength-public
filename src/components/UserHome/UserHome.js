@@ -29,6 +29,7 @@ class UserHome extends React.Component {
         let targetSongInfo = infoString.split("|")
         let result = await suggestSong(targetSongInfo[0],targetSongInfo[1],targetSongInfo[2],targetSongInfo[3], this.state.spotifyToken);
         if(result == "Success") {
+            // CALEB add pop up here
             alert(`Successfully added ${targetSongInfo[1]} to requested songs.`)
         }
     }
