@@ -12,11 +12,7 @@ class UserHome extends React.Component {
         const params = new URLSearchParams(window.location.search);
         this.state = {
             spotifyToken: params.get("token")
-            
         }
-
-        
-
     }
 
     handleSearch(event) {
@@ -32,7 +28,7 @@ class UserHome extends React.Component {
                     <h1>{this.state.spotifyToken}</h1>
                     <h1 className="title">Search</h1>
                     <form onSubmit={this.handleSearch}>
-                        <img className="search-icon" src={searchIcon} alt="search icon"/>
+                        <img className="search-icon" src={searchIcon} alt="search icon" />
                         <input className="search-songs" onChange={null/* TODO*/} placeholder="Suggest a song" autoComplete="off" />
                     </form>
                 </div>

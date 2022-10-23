@@ -40,8 +40,10 @@
 
 .selection {
     width: 200px;
+    height: 65px;
     margin: 10px;
     text-align: center;
+    justify-content: center;
     text-decoration: none;
     color: $background-color;
     background-color: $secondary-color;
@@ -49,6 +51,18 @@
     border-radius: 40px;
     vertical-align: middle;
     z-index: 1
+}
+
+.button-text {
+    padding: 0;
+}
+
+.fancy-text {
+    font-weight: 700;
+    background: $background-gradient;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
 .left {
