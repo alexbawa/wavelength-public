@@ -1,0 +1,29 @@
+@import '../../GlobalVars.scss';
+
+.create-event-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: $background-color;
+    color: $text-color;
+    font-family: $font;
+}
+
+.create-event-title {
+    font-size: $title-font-size;
+    margin-top: 60px;
+    margin-bottom: 18px;
+    color: #4B8BD7;
+    margin-left: 30px;
+}
+
+.create-event-subtitle {
+    font-size: 25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #FFFFFF;
+    margin-left: 30px;
+    margin-right: 30px;
+}
