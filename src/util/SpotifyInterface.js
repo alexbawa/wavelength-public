@@ -72,7 +72,6 @@ const SpotifyInterface = {
         let headers = {Authorization: `Bearer ${token}`};
         let response = await fetch(`https://api.spotify.com/v1/search?type=track&q=${terms}`, {headers})
         response = await response.json();
-
         if(!response.tracks) {
             return [];
         } else {
