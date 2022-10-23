@@ -1,7 +1,7 @@
 import React from "react";
 import './Homepage.scss';
 import RightArrow from "./right-arrow.png"
-import Logo from "./filler-logo.png"
+import Logo from "./logo.png"
 const coreURL = "http://localhost:3000"
 
 class Homepage extends React.Component {
