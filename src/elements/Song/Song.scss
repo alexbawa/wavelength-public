@@ -27,12 +27,13 @@
         overflow: hidden;
         text-overflow: ellipsis;
         display: block;
-        width: calc(100%);
+        width: calc(95%);
 
         .title {
             width: 100%;
             margin: auto 0;
-            font-size: 25px;
+            font-size: 24px;
+            font-weight: 550;
         }
 
         .artist {
@@ -40,6 +41,7 @@
             grid-row-end: 3;
             margin: auto 0;
             font-size: 15px;
+            font-weight: 200;
         }
     }
 }
