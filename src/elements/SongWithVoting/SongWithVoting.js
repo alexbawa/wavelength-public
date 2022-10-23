@@ -9,15 +9,15 @@ class SongWithVoting extends React.Component {
         super(props);
         this.state = {
             vote: 0,
-            voted: false,
+            voted: 0, // -1 for downvote, 1 for upvote, 0 for no vote yet
         }
     }
 
     upvote() {
         this.setState(prevState => {
             return {
-                vote: prevState.voted ? prevState.vote : prevState.vote + 1,
-                voted: true
+                vote: prevState.voted == 1 ? prevState.vote-1 : prevState.vote + 1 - prevState.voted,
+                voted: prevState.voted == 1 ? 0 : 1
             };
         });
     }
@@ -25,8 +25,8 @@ class SongWithVoting extends React.Component {
     downvote() {
         this.setState(prevState => {
             return {
-                vote: prevState.voted ? prevState.vote : prevState.vote - 1,
-                voted: true
+                vote: prevState.voted == -1 ? prevState.vote+1 : prevState.vote - 1 - prevState.voted,
+                voted: prevState.voted == -1 ? 0 : -1
             };
         });
     }
