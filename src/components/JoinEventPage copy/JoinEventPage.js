@@ -1,7 +1,7 @@
 import ReactCodeInput from 'react-code-input';
 import Input from 'react-phone-number-input/input';
 import { isValidPhoneNumber } from 'react-phone-number-input';
-import NumberPad from '../JoinCodeTextBox/NumberPad';
+import NumberPad from '../NumberPad/NumberPad';
 import { joinEvent } from '../../util/firebase';
 import { Link } from 'react-router-dom';
 import React from 'react';
