@@ -9,7 +9,7 @@ const IconTextButton = (props) => {
     }
 
     return (
-        <div>
+        <div className='wrapper'>
             <button className="icon-text-button" onClick={routeChange}>
                 <img src={props.icon} alt="alttext"></img>
                 <p>{props.text}</p>
