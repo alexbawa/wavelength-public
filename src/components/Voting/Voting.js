@@ -16,16 +16,10 @@ class Voting extends Component {
         }
     }
 
-    componentDidMount(){
-        this.getData();
-    }
-
-    async getData(){
+    async componentDidMount(){
         let results = await getSuggestedSongs(this.state.spotifyToken);
         this.setState({suggested_songs: results});
     }
-
-
 
     renderVotingSongs() {
         return this.state.suggested_songs.map(song => {
@@ -35,11 +29,12 @@ class Voting extends Component {
     }
 
     render() {
+        let linkString = "/userHome?token=" + this.state.spotifyToken;
         return (
             <div className='container'>
                 <div className='header'>
                     <BackButton className="back" link='/userHome' />
-                    <h1 onClick={() => this.getData()} className="title">Voting</h1>
+                    <h1 className="title">Voting</h1>
                 </div>
                 <div className='songs'>
                     {this.renderVotingSongs()}
