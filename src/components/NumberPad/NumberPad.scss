@@ -1,0 +1,18 @@
+.grid {
+    display: flex;                       /* establish flex container */
+    flex-wrap: wrap;                     /* enable flex items to wrap */
+    justify-content: space-around;
+    
+  }
+  .cell {
+    flex: 0 0 32%;                       /* don't grow, don't shrink, width */
+    height: 90px;
+    margin-bottom: 5px;
+    background-color: transparent;
+    border: 0cm;
+    color: white;
+    font-size: 36px;
+  }
+  .cell:active{
+    color: gray;
+}
