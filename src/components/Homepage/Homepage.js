@@ -46,12 +46,16 @@ class Homepage extends React.Component {
         }
         return (
             <div className="selection-container">
-                <div onClick={this.updateSelection} id="join" className={joinClasses}><p>Join</p></div>
-                <div onClick={this.updateSelection} id="create" className={createClasses}><p>Create</p></div>
+                <div onClick={this.updateSelection} id="join" className={joinClasses}>
+                    Join
+                </div>
+                <div onClick={this.updateSelection} id="create" className={createClasses}>
+                    Create
+                </div>
             </div>
         );
     }
-    
+
     render() {
         return (
             <div className="homepage">

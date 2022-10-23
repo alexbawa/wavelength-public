@@ -48,62 +48,6 @@
     font-family: $font;
 }
 
-.create-event-code-title {
-    font-size: $title-font-size;
-    margin-top: 60px;
-    margin-bottom: 18px;
-    color: #4B8BD7;
-    margin-left: 30px;
-}
-
-.create-event-playlist-page {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    background-color: $background-color;
-    color: $text-color;
-    font-family: $font;
-}
-
-.create-event-playlist-title {
-    font-size: $title-font-size;
-    margin-top: 60px;
-    margin-bottom: 18px;
-    color: #4B8BD7;
-    margin-left: 30px;
-}
-
-.create-event-playlist-subtitle {
-    font-size: 25px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    color: #FFFFFF;
-    margin-left: 30px;
-    margin-right: 30px;
-}
-
-.centered-box {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.create-event-playlist-input {
-    margin-top: 35px;
-    height: 40px;
-    width: 80%;
-    background-color: #2F2F2F;
-    color: white;
-    font-size: 20px;
-    padding-left: 10px;
-    border-radius: 4px;
-    margin-bottom: 35px;
-}
-
 .create-event-playlist-arrow {
     margin-bottom: 480px;
 }
