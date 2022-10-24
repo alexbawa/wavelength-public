@@ -64,16 +64,6 @@ class DJDashboard extends React.Component {
             </div>
         );
     }
-
-    // render() {
-    //     return (
-    //         <div className="create-event-playlist-page">
-    //             <button>Queue</button>
-    //             <button><Link to="/requests">Request</Link></button>
-                
-    //         </div>
-    //     );
-    // }
 }
 
 export default DJDashboard;
