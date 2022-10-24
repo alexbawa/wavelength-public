@@ -64,7 +64,7 @@ const SpotifyInterface = {
         await fetch(`https://api.spotify.com/v1/users/${user_response.id}/playlists/${playlistID}/tracks`, {
             headers,
             method: 'POST',
-            body: JSON.stringify({uris: trackURI}),
+            body: JSON.stringify({uris: [trackURI]}),
         })
     },
    

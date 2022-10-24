@@ -9,7 +9,6 @@ class CreateEventCodePage extends React.Component {
     }
 
     render() {
-        console.log(this.props.getPlaylistID());
         return (
             <div className="container create-event-code-page">
                 <h2 className="create-event-code-title">Event Code</h2>

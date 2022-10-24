@@ -14,6 +14,7 @@ class DJRequests extends React.Component {
         const params = new URLSearchParams(window.location.search);
         this.state = {
             spotifyToken: params.get("token"),
+            id: params.get("id"),
             suggested_songs: []
         }
     }
@@ -25,7 +26,8 @@ class DJRequests extends React.Component {
 
     renderVotingSongs() {
         return this.state.suggested_songs.map(song => {
-            return <RequestedSong song_uri={song.id} albumart={song.album_art_link} name={song.track_name} artist={song.artist} vote_state={song.net_vote} />
+            console.log(song.track_name)
+            return <RequestedSong id={this.state.id} token={this.state.spotifyToken} song_uri={song.id} albumart={song.album_art_link} name={song.track_name} artist={song.artist} vote_state={song.net_vote} />
         })
 
     }

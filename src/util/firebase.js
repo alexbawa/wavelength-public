@@ -73,8 +73,10 @@ export async function suggestSong(id, track_name, artist, album_art_link, token)
   const docsSnap = await getDocs(ref);
   var docRef = null;
   var suggested_songs = [];
+  console.log("suggesting")
   docsSnap.forEach(doc => {
     if (doc.data().spotify_token == token){
+      console.log("in here");
       suggested_songs = doc.data().suggested_songs;
       docRef = doc.ref;
       eventID = doc.id
@@ -121,6 +123,7 @@ export async function voteSong(song_id, vote) {
 }
 
 export async function getSuggestedSongs(token){
+  console.log(token)
   const ref = collection(firestore, "Events");
   const docsSnap = await getDocs(ref);
   var docRef = null;
