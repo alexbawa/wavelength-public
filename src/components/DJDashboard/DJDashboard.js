@@ -16,6 +16,7 @@ class DJDashboard extends React.Component {
         super(props);
         this.state = {
             spotifyToken: params.get("token"),
+            playlistID: params.get("id"),
             currentSong: null,
         }
 
@@ -46,7 +47,8 @@ class DJDashboard extends React.Component {
         
     }
     render() {
-        
+        console.log(this.state.spotifyToken);
+        var link = "/requests/?token="+this.state.spotifyToken+"&id="+this.state.playlistID;
         return (
             <div className="container wrapper">
                 <div className="search">
@@ -57,7 +59,7 @@ class DJDashboard extends React.Component {
                 </div>
                 <div className='other-actions'>
                     <IconTextButton className='queue' icon={playIcon} text="See queue" link="/djqueue" />
-                    <IconTextButton className='requests' icon={musicIcon} text="See requests" link="/requests" />
+                    <IconTextButton className='requests' icon={musicIcon} text="See requests" link={link} />
                 </div>
             </div>
         );

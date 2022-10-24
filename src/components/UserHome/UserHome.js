@@ -31,7 +31,7 @@ class UserHome extends React.Component {
         if(result == "Success") {
             // CALEB add pop up here
             alert(`Successfully added ${targetSongInfo[1]} to requested songs.`)
-            window.location.reload(false);
+            //window.location.reload(false);
         }
     }
 

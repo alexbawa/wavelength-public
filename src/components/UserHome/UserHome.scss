@@ -58,7 +58,7 @@
 }
 
 .other-actions {
-    margin: 5px;
+    margin: 5px 5px 0px 5px;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -68,7 +68,8 @@
     bottom: 0;
     width: 100%;
     white-space: nowrap;
-
+    background-color: $background-color;
+    z-index: 2;
     .queue {
         grid-row-start: 1;
         grid-row-end: 2;
